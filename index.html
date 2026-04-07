@@ -203,6 +203,14 @@
         font-size: 22px;
       }
 
+      .timeline-item .number {
+        top: 4px;
+      }
+
+      .timeline-item .number--offset {
+        top: 30px;
+      }
+
       .pricing {
         font-size: 18px;
       }
@@ -305,7 +313,7 @@
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+    }, { threshold: 0 });
 
     document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
   </script>
