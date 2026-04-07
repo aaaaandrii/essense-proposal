@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrii Pavlov + Essense.School — Proposal</title>
+  <style>
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('fonts/SuisseIntl-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('fonts/SuisseIntl-SemiBold.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Suisse Intl', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Blur-in animation */
+    @keyframes blurIn {
+      from {
+        opacity: 0;
+        filter: blur(12px);
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      opacity: 0;
+      filter: blur(12px);
+      transform: translateY(8px);
+    }
+
+    .animate-in.visible {
+      animation: blurIn 0.7s ease-out forwards;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      gap: 28px;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 60px 20px 0;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    /* Timeline */
+    .timeline {
+      max-width: 400px;
+      margin: 80px auto 0;
+      padding: 0 20px 80px;
+      position: relative;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 60px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Numbered circle */
+    .timeline-item .number {
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 17px;
+      height: 17px;
+      border: 1.5px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .timeline-item .number--offset {
+      top: 33px;
+    }
+
+    .timeline-item .optional-label {
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.3;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item h2 {
+      font-size: 27px;
+      font-weight: 600;
+      letter-spacing: -0.81px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .separator {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+      margin-bottom: 12px;
+    }
+
+    .separator--bold {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .timeline-item .description {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+      opacity: 0.7;
+      margin-bottom: 12px;
+    }
+
+    .pricing {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.6px;
+    }
+
+    .pricing .duration {
+      opacity: 0.3;
+    }
+
+    /* Total section */
+    .total-section {
+      padding-left: 36px;
+      margin-top: 60px;
+    }
+
+    .total-section .total-label {
+      font-size: 27px;
+      font-weight: 600;
+      letter-spacing: -0.81px;
+      text-align: right;
+      margin-bottom: 12px;
+    }
+
+    .total-section .pricing {
+      justify-content: flex-end;
+    }
+
+    /* Footer */
+    .footer-note {
+      padding-left: 36px;
+      margin-top: 40px;
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.5;
+    }
+
+    /* Animation delays are set dynamically via JS */
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .header {
+        padding-top: 40px;
+        font-size: 9px;
+      }
+
+      .timeline {
+        margin-top: 50px;
+        padding-bottom: 60px;
+      }
+
+      .timeline-item h2 {
+        font-size: 22px;
+      }
+
+      .pricing {
+        font-size: 18px;
+      }
+
+      .total-section .total-label {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header animate-in">
+    <span>Andrii Pavlov + Essense.School</span>
+    <span>Website</span>
+    <span>Phase 1</span>
+  </header>
+
+  <main class="timeline">
+
+    <div class="timeline-item animate-in">
+      <div class="number">1</div>
+      <h2>Research + Design Session</h2>
+      <div class="separator"></div>
+      <p class="description">Searching and selecting visual references and components to address the website's tasks. Design session with discussion and formation of the design direction.</p>
+      <div class="separator"></div>
+      <div class="pricing">
+        <span>&euro;1000</span>
+        <span class="duration">1 week</span>
+      </div>
+    </div>
+
+    <div class="timeline-item animate-in">
+      <div class="number">2</div>
+      <h2>Design Concept</h2>
+      <div class="separator"></div>
+      <p class="description">Creating a design concept showcasing visual language, layout, animation, interaction and typography principles &ndash; shown on the main page in both desktop and mobile versions.</p>
+      <div class="separator"></div>
+      <div class="pricing">
+        <span>&euro;1000</span>
+        <span class="duration">1 week</span>
+      </div>
+    </div>
+
+    <div class="timeline-item animate-in">
+      <div class="number">3</div>
+      <h2>All Pages Design</h2>
+      <div class="separator"></div>
+      <p class="description">Design for all pages from a Phase 1 structure based on an approved design concept.</p>
+      <div class="separator"></div>
+      <div class="pricing">
+        <span>&euro;1000</span>
+        <span class="duration">1 week</span>
+      </div>
+    </div>
+
+    <div class="timeline-item animate-in">
+      <div class="number">4</div>
+      <h2>Responsive Design</h2>
+      <div class="separator"></div>
+      <p class="description">Mobile and tablet versions for all pages, ensuring a consistent user experience across devices.</p>
+      <div class="separator"></div>
+      <div class="pricing">
+        <span>&euro;1000</span>
+        <span class="duration">1 week</span>
+      </div>
+    </div>
+
+    <div class="timeline-item animate-in">
+      <div class="number number--offset">5</div>
+      <p class="optional-label">Optional</p>
+      <h2>Development + Admin Panel</h2>
+      <div class="separator"></div>
+      <p class="description">Full responsive website development including frontend with all animations, and a database with an admin panel for content management. Deployment and SEO optimization included.</p>
+      <div class="separator separator--bold"></div>
+      <div class="pricing">
+        <span>&euro;2000</span>
+        <span class="duration">2 weeks</span>
+      </div>
+    </div>
+
+    <div class="total-section animate-in">
+      <p class="total-label">Total</p>
+      <div class="separator separator--bold"></div>
+      <div class="pricing" style="margin-top: 12px;">
+        <span class="duration">6 weeks</span>
+        <span>&euro;6000</span>
+      </div>
+    </div>
+
+    <p class="footer-note animate-in">All stages include a round of feedback at no extra charge.</p>
+
+  </main>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      const newlyVisible = entries.filter(e => e.isIntersecting);
+      newlyVisible.forEach((entry, i) => {
+        entry.target.style.animationDelay = (i * 0.15) + 's';
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+
+    document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
